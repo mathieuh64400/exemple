@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'Accueil
+{% endblock %}
+
+{% block body %}
+{% if is_granted('ROLE_ADMIN') %}
+				<h2 style="text-align:center;">Les différents Items :</h2>
+	<p style="text-align:center;">
+		Les différentes items sont découpés en 4 sous parties selon leurs objectifs:</p>
+	<div style="margin-left:33%;">
+		<div style="display:flex;flex-direction:column;">
+			<div style="display:flex;flex-direction:row;">
+
+				<div class="card text-white bg-dark mb-3" style="max-width: 20rem;margin-right:5%;">
+					<div class="card-header">Prise de Rendez-Vous</div>
+					<div class="card-body">
+						<h4 class="card-title">Fixer les rendez-vous:</h4>
+						<p class="card-text">
+							<a href="{{path('calendar_new')}}">
+								Ajouter un rendez-vous</a>
+						</p>
+						<h4 class="card-title">Verifier les rendez-vous</h4>
+						<p class="card-text">
+							<a href="{{path('calendrier')}}">
+								Voir le calendrier
+							</a>
+						</p>
+
+					</div>
+				</div>
+				<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+					<div class="card-header">Tchat</div>
+					<div class="card-body">
+						<h4 class="card-title">Rejoignez-le chat
+						</h4>
+						<p class="card-text">
+							<a href="{{path('chat')}}">
+								Discuter avec vos collégues
+							</a>
+							<br>
+							pour fixer un Rendez-vous pour une nouvelle partie
+						</p>
+					</div>
+				</div>
+
+
+			</div>
+			<div style="display:flex;flex-direction:row;">
+				<div class="card text-white bg-dark mb-3" style="max-width: 20rem;margin-right:5%;">
+					<div class="card-header">Liste des Quetes</div>
+					<div class="card-body">
+						<h4 class="card-title">
+							Verifier et voir les  Quetes <br>que vous faites avec <br>vos amis
+						</h4>
+						<p class="card-text">
+							<a href="{{path('annonces_index')}}">
+								les Quetes
+							</a>
+						</p>
+
+
+					</div>
+				</div>
+				<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+					<div class="card-header">Decouvrez les Annexes des parties</div>
+					<div class="card-body">
+						<h4 class="card-title">Annexes</h4>
+						<p class="card-text">
+							<a href="{{path('choix')}}">
+								Renseigner vous vis-a-vis des ennemis, des cartes.</a>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% elseif is_granted('ROLE_EDITOR') %}
+	<div>
+						salut l'ami demande l'accés à ce jeu !!!! l'accés à ce jeu est réservé a une bande d'amis qui sont tous administrateur du jeu!!
+						<br> Merci de votre compréhension !!</div>
+
+				{% elseif is_granted('ROLE_USER') %}
+						<div>
+						l'accés à ce jeu est réservé a une bande d'amis qui sont tous administrateur du jeu!!
+						<br> Merci de votre compréhension !!</div>
+			{% endif %}
+	
+{% endblock %}

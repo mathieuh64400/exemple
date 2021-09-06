@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Calendar{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <h2>Create new Calendar</h2>
+
+ <div class="jumbotron container-fluid row"style="margin:auto">
+			<div>
+				{{ include('calendar/_form.html.twig') }}
+			</div>
+			<div style=" margin-left:33%;">
+			<h2  >Informations  concernant
+						<br>vos données personnelles
+					</h2>
+					<br><br>
+					<p class="lead">"Lorem ipsum dolor sit amet<br>
+						consectetur  adipiscing elit, sed do eiusmod
+						<br>
+						
+						<br> labore et dolore magna aliqua.<br>
+						Ut enim ad minim veniam quis nostrud exercitation
+						<br>
+						
+						ex ea commodo consequat velit esse.<br>
+						
+						<br>Duis aute irure dolor in eprehenderit in voluptate 
+						<br>cillum dolore eu fugiat nulla pariatur.
+						
+
+						
+					</p>
+			</div>
+		</div>
+
+    <a href="{{ path('accueil') }}">Retour a l'accueil</a>
+{% endblock %}

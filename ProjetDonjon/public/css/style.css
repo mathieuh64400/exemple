@@ -1,0 +1,16 @@
+body{overflow-x: hidden;}
+
+h1{
+    text-align: center;
+    margin-top: 50%;
+    
+}
+h2,h3{ text-align: center}
+#calendrier{
+    margin-bottom: 5%;
+    margin-top:2%;
+    color:black;
+}
+a{
+    color:black;
+}

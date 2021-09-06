@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Carte{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <h2>Create new Carte</h2>
+
+    {{ include('carte/_form.html.twig') }}
+
+    <a href="{{ path('carte_index') }}">retour à la liste de carte</a>
+{% endblock %}

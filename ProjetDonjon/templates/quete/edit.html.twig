@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Quete{% endblock %}
+
+{% block body %}
+    <h2>Edit Quete</h2>
+
+    {{ include('quete/_form.html.twig', {'button_label': 'mettre ajour'}) }}
+
+    <a href="{{ path('quete_index') }}">retour</a>
+
+    {{ include('quete/_delete_form.html.twig') }}
+{% endblock %}

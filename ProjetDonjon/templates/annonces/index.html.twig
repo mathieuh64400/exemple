@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonces index
+{% endblock %}
+
+{% block body %}
+	<h2> liste des Quetes </h2>
+{{ form(form) }}
+<button type="button" class="btn btn-info">
+		<a href="{{ path('annonces_new') }}">Create new</a>
+	</button>
+    <p> ATTENTION: 4 Images doivent être selectionnées!!!</p>
+<div class="row">
+	{% for annonce in annonces %}
+		<div class="card mb-3" style="width:25%; margin-left:3%">
+			<h3
+				class="card-header"> Niveau :{{annonce.nature}} 
+			</h3>
+			<div class="card-body">
+				<h5 class="card-title">
+					{{ annonce.title }}
+					
+				</h5>
+				<h6
+					class="card-subtitle text-muted"> {{annonce.subtitle|u.camel.title(50,'...') }} 
+				</h6>
+			</div>
+			<img
+			src="{{ asset('uploads/' ~ annonce.images[0].name)|imagine_filter('banniere') }}">
+			{# <text x="50%" y="50%" fill="#dee2e6" dy=".3em">logo de la quete</text> #}
+
+			<div class="card-body">
+				<p class="card-text">
+					{{ annonce.content|u.truncate(400,'...') }}
+				
+				</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">durée:
+					{{annonce.duree}} minutes
+				</li>
+				<li class="list-group-item">etat de la partie :
+					{{ annonce.etat }}</li>
+				<li class="list-group-item"> nombre de participant: {{ annonce.nbreparticipant }} (sans maitre du jeu)</li>
+			</ul>
+			<div class="card-body">
+				<button type="button" class="btn btn-warning">
+					<a href="{{ path('annonces_show', {'id': annonce.id}) }}">Detail</a>
+				</button>
+				<button type="button" class="btn btn-warning">
+					<a href="{{ path('annonces_edit', {'id': annonce.id}) }}">Modifier</a>
+				</button>
+				<button type="button" class="btn btn-warning">
+					<a href="{{ path('annonces_index') }}">retour sur la lise</a>
+				</button>
+
+			</div>
+			<div class="card-footer text-muted">
+				Maitre du jeu:
+				{{annonce.maitre}} 
+			</div>
+		</div>
+
+
+	{% else %}
+		<div>
+			<td colspan="4">no records found</td>
+		</div>
+	{% endfor %}</div>
+	{# </tbody>
+	    </table> #}
+	
+{% endblock %}

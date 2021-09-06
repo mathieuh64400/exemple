@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Quete{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <h2>Create new Quete</h2>
+
+    {{ include('quete/_form.html.twig') }}
+
+    <a href="{{ path('quete_index') }}">retour a la liste</a>
+{% endblock %}
