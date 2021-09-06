@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quete index
+{% endblock %}
+
+{% block body %}
+	<h2>Liste Ennemi existant</h2>
+	<a href="{{ path('quete_new') }}">Nouvel ennemi</a>
+	{# <div style="display:flex; flex-direction:row;"> #}
+	<div class="row">
+		{% for quete in quetes %}
+
+
+			<div class="card mb-3" style="width:25%; margin-left:3%">
+				<h3 class="card-header">
+					Nature :{{quete.typeQuete}}</h3>
+				<div class="card-body">
+					<h5 class="card-title">
+						{{quete.quetetitre}}
+					</h5>
+					<h6 class="card-subtitle text-muted">{{quete.quetesoustitre|u.camel.title(50,'...') }}</h6>
+				</div>
+				<image src="{{ asset('uploads/' ~ quete.filename)|imagine_filter('banniere') }}" width="100%;" heigth="10%;">
+				
+
+				<div class="card-body">
+					<p class="card-text">
+						{{quete.description|u.truncate(400,'...')}}</p>
+				</div>
+				{# <ul class="list-group list-group-flush">
+					<li class="list-group-item">durée:
+						{{quete.duree}}</li>
+					{# <li class="list-group-item">etat de la partie : {{ quete.etatpartie }}</li>
+																										<li class="list-group-item">Vestibulum at eros</li> #}
+				{#</ul>
+				<div class="card-body">
+					<a href="{{ path('quete_show', {'id': quete.id}) }}">detail</a>
+					{# <a href="{{ path('quete_edit', {'id': quete.id}) }}">edit</a> 
+				</div>#}
+			{#	<div class="card-footer text-muted">
+					Maitre du jeu:
+					{{quete.maitre}}
+				</div> #}
+			</div>
+
+
+		{% else %}
+
+			<div>
+				<p colspan="3">no records found</p>
+			</div>
+		{% endfor %}
+	</div>
+
+
+{% endblock %}

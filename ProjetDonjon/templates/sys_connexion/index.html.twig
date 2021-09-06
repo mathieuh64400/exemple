@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SysConnexionController!
+{% endblock %}
+
+{% block body %}
+	<h2>Choix de Connexion/authentification</h2>
+	<div style="margin-left:10%;margin-right:10%;margin-top:10%;display:flex; flex-direction:column;">
+		<button type="button" class="btn btn-outline-dark">
+			<a href="{{path('app_login')}}">
+				Connexion</a>
+		</button>
+		<button type="button" class="btn btn-outline-dark">
+			<a href="{{path('app_register')}}">Authentification</a>
+		</button>
+	</div>
+{% endblock %}

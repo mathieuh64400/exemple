@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}calendrier de reservation des parties
+{% endblock %}
+
+{% block body %}
+	<div id="calendrier"></div>
+    <div> Voila le calendrier </div>
+    <br>
+    <button type="button" class="btn  btn-info btn-lg"><a href="{{path('accueil')}}" > retour a l'accueil</a></button>
+{% endblock %}
+{% block javascripts %}
+	<script>
+		window.onload = () => {
+let calendarElt = document.getElementById('calendrier');
+
+
+let calendar = new FullCalendar.Calendar(calendarElt, {
+views: {
+dayGridMonth: { // name of view
+titleFormat: {
+year: 'numeric',
+month: '2-digit',
+day: '2-digit'
+}
+}
+},
+locale: 'fr',
+timeZone: 'Europe/Paris',
+buttonText: {
+today: 'Aujourd\'hui',
+week: 'Semaine',
+month: 'Mois',
+day: 'jour'
+},
+headerToolbar: {
+start: ',dayGridMonth,dayGridWeek,timeGridDay,',
+center: 'title',
+end: 'prev,today,next'
+},
+validRange: {
+start: '2020-01-01'
+},
+
+nowIndicator: true,
+events:{{data|raw}},
+editable:true,
+eventResizableFromStart: true
+})
+calendar.on('eventChange',(e)=>{
+   let url=`/api/${e.event.id}/edit`
+   let donnees={
+       "title":e.event.title,
+       "description":e.event.extendedProps.description,
+       "start":e.event.start,
+       "end":e.event.end,
+       "backgroundColor":e.event.backgroundColor,
+       "allDay":e.event.allDay
+   }
+   console.log(donnees);
+   let xhr = new XMLHttpRequest;
+   xhr.open("PUT",url);
+   xhr.send(JSON.stringify(donnees));
+
+
+})
+
+calendar.render();
+}
+	</script>
+{% endblock %}
+{# {% endblock %} #}

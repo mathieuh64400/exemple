@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte{% endblock %}
+
+{% block body %}
+    <h2>{{ carte.titre }}</h2>
+
+        <image style="margin-left:1%;" src="{{ asset('uploads/' ~ carte.filename)|imagine_filter('megasquare') }}">
+          
+    <div>
+    <a href="{{ path('carte_index') }}">retour</a></div>
+
+   
+
+    {{ include('carte/_delete_form.html.twig') }}
+{% endblock %}
