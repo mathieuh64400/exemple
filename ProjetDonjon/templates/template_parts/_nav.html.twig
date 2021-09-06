@@ -16,7 +16,7 @@
         </li>
         <li class="nav-item">
         {% if is_granted('ROLE_ADMIN') %}
-				<a class="nav-link" href="{{path('admincontrol_utilisateur')}}">ADMINISTRATION</a>
+				<a class="nav-link" href="{{path('admincontrol_index')}}">ADMINISTRATION</a>
 				{% elseif is_granted('ROLE_USER') %}
 
 			{% endif %}
