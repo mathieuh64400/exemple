@@ -35,7 +35,8 @@ app.on('ready',function(){
 // traitememnt createAddWindow:
 function createAddWindow(){
    // new window:
-   addWindow = new BrowserWindow({width: 400, height: 400, title:'add Cities list Items'},   {webPreferences: {
+   addWindow = new BrowserWindow({width: 400, height: 400, title:'add Cities list Items'},
+      {webPreferences: {
     nodeIntegration: true,
     contextIsolation: false,
     enableRemoteModule: true,

@@ -6,6 +6,7 @@ h1{
     
 }
 h2,h3{ text-align: center}
+
 #calendrier{
     margin-bottom: 5%;
     margin-top:2%;
@@ -13,4 +14,7 @@ h2,h3{ text-align: center}
 }
 a{
     color:black;
+}
+.cadre{
+    background-image: url('../../public/img/gleb-lucky-m6Z_1r3djsk-unsplash.jpg');
 }

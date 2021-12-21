@@ -30,31 +30,3 @@ apicall('Pau');
 
 
 
-
-// const electron = require('electron');
-// const {ipcRenderer}=electron;
-// const ul= document.querySelector('ul');
-
-// // ajout des villes:
-// ipcRenderer.on('item:add',function(e,item){
-//     const li=document.createElement('li');
-//     const city=document.createTextNode(item);
-//     li.appendChild(city);
-//     ul.appendChild(li)
-
-// })
-
-// // clear items=cities;
-// ipcRenderer.on('item:clear',function(){
-//     ul.innerHTML='';
-// })
-// cnst { app, BrowserWindow } = electron;
-// new BrowserWindow({
-//     width: 800, height: 600,
-//     webPreferences: {
-//         nodeIntegration: true,
-//         contextIsolation: false,
-//         enableRemoteModule: true,
-//       }
-// })
-

@@ -1,28 +1,33 @@
-
- 
 {% block title %}{% endblock %}
 <link rel="stylesheets" href="{{asset('css/style.css')}}">
 {% block body %}
-{# <body style=" background-image: url("../../public/img/");"> #}
-    <h1 style="
-    text-align: center;
-    margin-top: 25%;">   Donjon&Dragon Meeting </h1>
-    <p style="
-    text-align: center;
-    margin-top: 5%;margin-bottom:5%;"> Site pour  fixer les réunions de Donjon et Dragon du Groupe <br> On tient une Auberge!!</p>
-    <button style=" background-color: black; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;margin-left:47%;"
-  > 
-  
-  <a href="{{path('sys_connexion')}}"> GO </a>
-  </button>
-    
-    
-    {# </body> #}
+
+		<div class="cadre">
+			<h1 style="
+					    text-align: center;
+					    margin-top: 25%;">
+				Donjon&Dragon Meeting
+			</h1>
+			<p style="
+					    text-align: center;
+					    margin-top: 5%;margin-bottom:5%;">
+				Site pour  fixer les réunions de Donjon et Dragon du Groupe
+				<br>
+				On tient une Auberge!!</p>
+			<button style=" background-color: black;
+					  border: none;
+					  color: white;
+					  padding: 15px 32px;
+					  text-align: center;
+					  text-decoration: none;
+					  display: inline-block;
+					  font-size: 16px;margin-left:47%;">
+
+				<a href="{{path('sys_connexion')}}">
+					GO
+				</a>
+			</button>
+		</div>
+
+
 {% endblock %}
