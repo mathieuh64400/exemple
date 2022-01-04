@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<h1 > tchat: </h1>
+<p class="para" > En cas de problème <br> contacter un autre administrateur</p>
+<a href="#" routerLink="/accueil" class="btn2"> Accueil</a>
+
+
+<div>
+    <app-username (userNameEvent)="userNameUpdate($event)" *ngIf="!userName"></app-username>
+    <div class="cadresend" >
+        <div class="send-message">
+            <input type="text" [(ngModel)]="message" class="form-control">
+            <button (click)="sendMessage()" class='btn'>Send</button>
+        </div>
+    </div>
+</div>
+<div>
+    <div class='cadrelist'>
+        <div class='souscadrelist'>
+            <div style="margin-left: 10%;">
+                <h2> liste des utilisateurs</h2>
+                <div *ngFor='let user of userList'>
+                    <p class="username">{{user}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="message-list" >
+            <h3> Vos messages:</h3>
+            <hr >
+            <div class="chatbox__messages" *ngFor="let msg of messageList" [ngClass]="{mine: msg.mine}">
+                <div class="user-message">
+                    <div class="message-box">
+                        <p class="name"> <strong>utilisateur:</strong>{{ msg.userName }}</p>
+
+                        <p class="message"> <strong> message :</strong>{{ msg.message }}</p>
+                    </div>
+                    <div style="text-align: center;">-------------------------------------------------</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <app-footer></app-footer>

@@ -1,0 +1,103 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="container">
+    <h1>Mettre a jour une carte:</h1>
+  
+    <a href="#" routerLink="/utilisateur" class="btn2">Accueil</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="titre">nom:</label>
+            <input 
+                formControlName=" nom"
+                id="titre" 
+                type="text" 
+                [(ngModel)]="post.nom"
+                class="form-control">
+            <div *ngIf="f. nom.touched && f. nom.invalid" class="alert alert-danger">
+                <div *ngIf="f. nom.errors?.required"> nom is required.</div>
+            </div>
+        </div>
+         
+        <div class="form-group">
+            <label for="contenu">prenom</label>
+            <input 
+                formControlName="prenom"
+                id="prenom" 
+                type="text" 
+                [(ngModel)]="post.prenom"
+                class="form-control">
+           
+            <div *ngIf="f.prenom.touched && f.prenom.invalid" class="alert alert-danger">
+                <div *ngIf="f.prenom.errors?.required">prenom is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="contenu">pseudo</label>
+            <input 
+                formControlName="pseudo"
+                id="pseudo" 
+                type="text" 
+                [(ngModel)]="post.pseudo"
+                class="form-control">
+            
+            <div *ngIf="f.pseudo.touched && f.pseudo.invalid" class="alert alert-danger">
+                <div *ngIf="f.pseudo.errors?.required">pseudo is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="contenu">preference</label>
+            <input 
+                formControlName="preference"
+                id="preference" 
+                type="text" 
+                [(ngModel)]="post.preference"
+                class="form-control">
+          
+            <div *ngIf="f.preference.touched && f.preference.invalid" class="alert alert-danger">
+                <div *ngIf="f.preference.errors?.required">preference is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="promotion">promotion</label>
+            <input 
+                formControlName="promotion"
+                id="promotion" 
+                type="text" 
+                [(ngModel)]="post.promotion"
+                class="form-control">
+          
+            <div *ngIf="f.promotion.touched && f.promotion.invalid" class="alert alert-danger">
+                <div *ngIf="f.promotion.errors?.required">promotion is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mail">email</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="mail" 
+                [(ngModel)]="post.email"
+                class="form-control">
+         
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors?.required">email is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lieu">lieu</label>
+            <input 
+                formControlName="lieu"
+                id="lieu" 
+                type="text" 
+                [(ngModel)]="post.lieu"
+                class="form-control">
+      
+            <div *ngIf="f.lieu.touched && f.lieu.invalid" class="alert alert-danger">
+                <div *ngIf="f.lieu.errors?.required">lieu is required.</div>
+            </div>
+        </div>
+        <button class="btn" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
+<!-- <app-footer></app-footer> -->

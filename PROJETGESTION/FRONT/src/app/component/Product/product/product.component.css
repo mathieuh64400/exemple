@@ -1,0 +1,100 @@
+h2 {
+  color: gold;
+  margin-left: 45%;
+}
+
+.retour {
+  font-weight: bold;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.encadre {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: black;
+  border: black solid 0.25em;
+  /* background-color: white; */
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  padding-bottom: 0%;
+  background-color: gold;
+  display: flex;
+  flex-direction: row;
+}
+
+.bigcadre {
+  border: black solid 5px;
+  margin: 5%;
+  overflow-y: scroll;
+  margin-bottom: 50%;
+}
+
+.search {
+  margin: 5%;
+}
+
+.repartion {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.souscadre {
+  width: 75%;
+  background-color: white;
+  border: solid 1px black;
+}
+
+.card-text {
+  font-size: small;
+  word-wrap: break-word;
+
+  width: 100%;
+}
+
+img {
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  width: 25%;
+  height: 33%;
+}
+
+@media (max-width : 500px) {
+  .encadre {
+    font-weight: bold;
+    font-size: 0.75em;
+    color: black;
+    border: black solid 0.25em;
+    /* background-color: white; */
+    width: 66%;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding-bottom: 0%;
+    background-color: gold;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .souscadre {
+    width: 100%;
+    background-color: white;
+    border: solid 1px black;
+    word-wrap: break-word;
+    margin-left: -30%;
+
+  }
+
+  .card-text {
+    font-size: 0.9em;
+    word-wrap: break-word;
+  }
+  h2{
+    margin-left: 25%;
+  }
+}

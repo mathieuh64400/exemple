@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h1>Mettre a jour un evenement:</h1>
+  
+    <a href="#" routerLink="/pbcarte" class="btn3">Accueil</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="titre">Titre:</label>
+            <input 
+                formControlName="titre"
+                id="titre" 
+                type="text" 
+                [(ngModel)]="pbcarte.titre"
+                class="form-control">
+            <div *ngIf="f.titre.touched && f.titre.invalid" class="alert alert-danger">
+                <div *ngIf="f.titre.errors?.required">Titre is required.</div>
+            </div>
+        </div>
+         
+        <div class="form-group">
+            <label for="contenu">contenu</label>
+            <textarea 
+                formControlName="contenu"
+                id="contenu" 
+                type="text" 
+                [(ngModel)]="pbcarte.contenu"
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.contenu.touched && f.contenu.invalid" class="alert alert-danger">
+                <div *ngIf="f.contenu.errors?.required">contenu is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">author:</label>
+            <input 
+                formControlName="author"
+                id="titre" 
+                type="text" 
+                [(ngModel)]="pbcarte.author"
+                class="form-control">
+            <div *ngIf="f.author.touched && f.author.invalid" class="alert alert-danger">
+                <div *ngIf="f.author.errors?.required">author is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">date:</label>
+            <input 
+                formControlName="date"
+                id="date" 
+                type="date" 
+                [(ngModel)]="pbcarte.date"
+                class="form-control">
+            <div *ngIf="f.date.touched && f.date.invalid" class="alert alert-danger">
+                <div *ngIf="f.date.errors?.required">date is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">imgUrl:</label>
+            <input 
+                formControlName="imgUrl"
+                id="imgUrl" 
+                type="text" 
+                [(ngModel)]="pbcarte.imgUrl"
+                class="form-control">
+            <div *ngIf="f.imgUrl.touched && f.imgUrl.invalid" class="alert alert-danger">
+                <div *ngIf="f.imgUrl.errors?.required">imgUrl is required.</div>
+            </div>
+        </div>
+        <button class="btn3" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
+<app-footer></app-footer>

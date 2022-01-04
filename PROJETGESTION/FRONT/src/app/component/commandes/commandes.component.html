@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<h1>passer commandes</h1>
+
+<div class="container" style="margin-bottom: 15%;">
+
+    <div class="card" >
+        <img class="card-img-top"
+            src="https://www.pourquoidocteur.fr/media/article/thunbs/uploded_stock-image-44631625-m-2015-1509636079.jpg"
+            alt="Card image cap">
+        <div class="card-body">
+            <div class="card-text">
+
+                <form [formGroup]="forms" (ngSubmit)="submit()">
+                    <div class="repartition">
+                        <div class="form-group">
+                            <label for="name"> Entrez le nom du commanditaire</label>
+                            <input formControlName="name" id="name" type="text" class="form-control">
+                            <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                                <div *ngIf="f.name.errors?.required">name is required.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomprod"> entrez le nom du produit</label>
+                            <input formControlName="nameprod" id="nameprod" type="text" class="form-control">
+                            <div *ngIf="f.nameprod.touched && f.nameprod.invalid" class="alert alert-danger">
+                                <div *ngIf="f.nameprod.errors?.required">nameprod is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                    <label for="description">description</label>
+                    <textarea formControlName="description" id="description" type="text" class="form-control">
+            </textarea>
+                    <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+                        <div *ngIf="f.description.errors?.required">description is required.</div>
+                    </div>
+                </div> -->
+               
+                    <div class="form-group">
+                        <label for="date">date</label>
+                        <input formControlName="date" id="date" type="date" class="form-control">
+
+                        <div *ngIf="f.date.touched && f.date.invalid" class="alert alert-danger">
+                            <div *ngIf="f.date.errors?.required">date is required.</div>
+                        </div>
+                    </div>
+                  <div class="repartition">   <div class="form-group">
+                        <label for="quantity">entrez la quantité commandée</label>
+                        <input formControlName="quantity" id="quantity" type="number" class="form-control">
+
+                        <div *ngIf="f.quantity.touched && f.quantity.invalid" class="alert alert-danger">
+                            <div *ngIf="f.quantity.errors?.required">quantity is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">imageUrl</label>
+                        <input formControlName="imageUrl" id="imageUrl" type="text" class="form-control">
+
+                        <div *ngIf="f.imageUrl.touched && f.imageUrl.invalid" class="alert alert-danger">
+                            <div *ngIf="f.imageUrl.errors?.required">imageUrl is required.</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <button class="btn btn-primary" type="submit"  [disabled]="!forms.valid">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+<app-footer></app-footer>

@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <h1>Mettre a jour une carte:</h1>
+  
+    <a href="#" routerLink="/product" class="btn3">Accueil</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="titre">Titre:</label>
+            <input 
+                formControlName="titre"
+                id="titre" 
+                type="text" 
+                [(ngModel)]="product.titre"
+                class="form-control">
+            <div *ngIf="f.titre.touched && f.titre.invalid" class="alert alert-danger">
+                <div *ngIf="f.titre.errors?.required">Titre is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">name:</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                [(ngModel)]="product.name"
+                class="form-control">
+            <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                <div *ngIf="f.name.errors?.required">name is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">imageUrl:</label>
+            <input 
+                formControlName="imageUrl"
+                id="imageUrl" 
+                type="text" 
+                [(ngModel)]="product.imageUrl"
+                class="form-control">
+            <div *ngIf="f.imageUrl.touched && f.imageUrl.invalid" class="alert alert-danger">
+                <div *ngIf="f.imageUrl.errors?.required">imageUrl is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="category">category:</label>
+            <input 
+                formControlName="category"
+                id="category" 
+                type="text" 
+                [(ngModel)]="product.category"
+                class="form-control">
+            <div *ngIf="f.category.touched && f.category.invalid" class="alert alert-danger">
+                <div *ngIf="f.category.errors?.required">category is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="quantity">quantité:</label>
+            <input 
+                formControlName="quantity"
+                id="quantity" 
+                type="number" 
+                [(ngModel)]="product.quantity"
+                class="form-control">
+            <div *ngIf="f.quantity.touched && f.quantity.invalid" class="alert alert-danger">
+                <div *ngIf="f.quantity.errors?.required">quantity is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="quantity">date</label>
+            <input 
+                formControlName="date"
+                id="date" 
+                type="date" 
+                [(ngModel)]="product.date"
+                class="form-control">
+            <div *ngIf="f.date.touched && f.date.invalid" class="alert alert-danger">
+                <div *ngIf="f.date.errors?.required">date is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">description</label>
+            <textarea 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                [(ngModel)]="product.description"
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+                <div *ngIf="f.description.errors?.required">description is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="etat">etat:</label>
+            <input 
+                formControlName="etat"
+                id="etat" 
+                type="text" 
+                [(ngModel)]="product.etat"
+                class="form-control">
+            <div *ngIf="f.etat.touched && f.etat.invalid" class="alert alert-danger">
+                <div *ngIf="f.etat.errors?.required">etat is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for=" NomConsommateur">Nomconsommateur:</label>
+            <input 
+                formControlName="NomConsommateur"
+                id=" NomConsommateur" 
+                type="text" 
+                [(ngModel)]="product. NomConsommateur"
+                class="form-control">
+            <div *ngIf="f.NomConsommateur.touched && f.NomConsommateur.invalid" class="alert alert-danger">
+                <div *ngIf="f.NomConsommateur.errors?.required"> NomConsommateur is required.</div>
+            </div>
+        </div>
+        
+        <button class="btn3" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>

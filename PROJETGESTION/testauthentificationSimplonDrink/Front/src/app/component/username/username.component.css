@@ -1,0 +1,31 @@
+input[type=text] {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  color: black;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.btn {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 2px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  margin-top: 5%;
+
+}
+
+.cadreusername {
+  margin-left: 35%;
+  width: 25em;
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,113 @@
+<app-navbar></app-navbar>
+<div class="card text-center"  class="box">
+    <div class="card-body">
+        <h5 class="card-title" class="titrepart">Create une fiche utilisateur </h5>
+                <div class="cadre" style="overflow-y: scroll;">
+                    <form [formGroup]="forms" (ngSubmit)="submit()">
+        <div class="rep">
+        <div class="form-group">
+            <label for="nom">Nom </label>
+            <input 
+                formControlName="nom"
+                id="nom" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.nom.touched && f.nom.invalid" class="alert alert-danger">
+                <div *ngIf="f.nom.errors?.required">nom is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">prenom</label>
+            <input 
+                formControlName="prenom"
+                id="prenom" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.prenom.touched && f.prenom.invalid" class="alert alert-danger">
+                <div *ngIf="f.prenom.errors?.required">prenom is required.</div>
+            </div>
+        </div>
+  </div>
+        <div class="form-group">
+            <label for="pseudo">pseudo</label>
+            <input
+                formControlName="pseudo"
+                id="pseudo" 
+                type="text" 
+                class="form-control">
+            
+            <div *ngIf="f.pseudo.touched && f.pseudo.invalid" class="alert alert-danger">
+                <div *ngIf="f.pseudo.errors?.required">pseudo is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pseudo">preference</label>
+            <input 
+                formControlName="preference"
+                id="preference" 
+                type="text" 
+                class="form-control">
+            
+            <div *ngIf="f.preference.touched && f.preference.invalid" class="alert alert-danger">
+                <div *ngIf="f.preference.errors?.required">preference is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mail">email</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="mail" 
+                class="form-control">
+            
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors?.required">email is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lieu">lieu</label>
+            <input 
+                formControlName="lieu"
+                id="lieu" 
+                type="text" 
+                class="form-control">
+            
+            <div *ngIf="f.lieu.touched && f.lieu.invalid" class="alert alert-danger">
+                <div *ngIf="f.leiu.errors?.required">lieu is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="promotion">promotion</label>
+            <input 
+                formControlName="promotion"
+                id="promotion" 
+                type="text" 
+                class="form-control">
+            
+            <div *ngIf="f.promotion.touched && f.promotion.invalid" class="alert alert-danger">
+                <div *ngIf="f.promotion.errors?.required">lpromotion is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="promotion">image</label>
+            <input 
+                formControlName="img"
+                id="img" 
+                type="file" 
+                class="form-control">
+            
+            <div *ngIf="f.img.touched && f.img.invalid" class="alert alert-danger">
+                <div *ngIf="f.promotion.errors?.required">l'image is required.</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-dark" type="submit" [disabled]="!forms.valid">Submit</button>
+    </form>
+        
+
+                </div>
+
+    </div>
+</div>
+<app-footer></app-footer>
+

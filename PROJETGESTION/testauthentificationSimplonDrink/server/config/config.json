@@ -1,0 +1,14 @@
+{
+    "development": {
+        "PORT": 3050,
+        "MONGODB_URI": "mongodb+srv://appLogin:appLogin@cluster0.git9u.mongodb.net/srumblelogin",
+        "JWT_SECRET": "Testanularavecnodejsparmathieupourcourssurlesmulticouches",
+        "JWT_EXP": "15m"
+    },
+    "production": {
+     
+        "MONGODB_URI": "mongodb+srv://appLogin:appLogin@cluster0.git9u.mongodb.net/srumblelogin",
+        "JWT_SECRET": "Testanularavecnodejsparmathieupourcourssurlesmulticouches",
+        "JWT_EXP": "15m"
+    }
+}

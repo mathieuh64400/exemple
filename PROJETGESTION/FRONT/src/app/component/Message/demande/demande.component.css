@@ -1,0 +1,61 @@
+.rep{
+    display: flex;
+    flex-direction: row;
+}
+h2{
+    text-align: center;
+    font-size: 4em;
+    color: black;
+}
+a{
+    color:white;
+}
+.soustitre{
+    text-align: center;
+    font-size: 2em;
+    color: black;
+}
+.box{
+    margin-top: 2%;
+    margin-left: 25%;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    width:40%;
+    background-color: #FCCC2E;
+    border: 5px solid black;
+
+}
+.cadre{
+     margin-left:3%;
+     background-color: white;
+     border: 5px solid black;
+     padding-bottom: 2%;
+}
+.titrepart{
+    background-color: white;
+    font-size: 2em;
+    padding-top: 3%;
+    padding-left: 1%;
+    height: 2.5em;
+    border: solid 5px black;
+}
+#symbol{
+    margin-left:50%;
+}
+#category, #Description{
+    margin-left:3%;
+}
+#nom{
+    margin-left: 15%; margin-right:3%;
+}
+#trait{
+    text-align: center;
+}
+label{
+    margin-left: 2%;
+}
+input,textarea{
+    margin-left:2%;
+    margin-right: 2%;
+    width: 95%;
+}

@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<article>
+    <h1>List des Messages</h1>
+
+   
+    <br> <br> <br>
+  
+    <table class="table">
+        <tr class="cadretitre">
+            <th>ID</th>
+            <th>pseudo</th>
+            <th>Nom</th>
+            <th>description</th>
+            
+            <th>date</th>
+            <th>type</th>
+            <th>nature</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let post of demandes">
+            <td>{{ post._id }}</td>
+            <td>{{ post.pseudo }}</td>
+            <td>{{ post.Nom }}</td>
+            <td>{{ post.description}}</td>
+            <td>{{ post.type}}</td>
+            <td>{{ post.date | date:'mediumDate'}}</td>
+            <td>{{ post.nature}}</td>
+
+            <td style='color:white;'>
+
+                <a (click)="deleteDemande(post._id)" class="btn3">
+                    DELETE
+                </a>
+            </td>
+        </tr>
+    </table>
+</article>
+<app-footer></app-footer>

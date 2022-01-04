@@ -1,0 +1,43 @@
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjTOAJmDNNcU-b8HPvgxFMyXnh3ZPiAwsXyg&usqp=CAU');
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.position {
+  text-align: center;
+}
+
+.cadre {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20%;
+  margin-top: 3%;
+}
+
+main {
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  border: black solid 0.25em;
+  background-color: ivory;
+  width: 50%;
+  height: 33%;
+  margin: 11%;
+  margin-left: 20%;
+  padding: 5%;
+}
+
+.champs {
+  color: black;
+  text-align: center;
+}

@@ -1,0 +1,74 @@
+
+form {
+    background-color: transparent;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 80%;
+    height: 55%;
+    padding: 2%;
+    /* border: 1px solid black; */
+  }
+  .rep{
+      display:flex;
+      flex-direction:row;
+      width:100%;
+  }
+textarea{color:black}
+  input[type=text],
+  input[type=password],input[type=date],input[type=number] {
+    margin: 5%;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: black;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .message {
+    color: white;
+    font-size: 0.75em;
+  }
+  
+  .invalid-textbox {
+    color: red;
+    margin-top: 2%;
+    font-size: large;
+  }
+  
+  .validation-message {
+    color: red;
+    margin-top: 2%;
+    font-size: large;
+  }
+  
+  a {
+    text-decoration: none;
+    color: Black;
+  }
+  .btn3 {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 2px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 5%;
+  
+  }

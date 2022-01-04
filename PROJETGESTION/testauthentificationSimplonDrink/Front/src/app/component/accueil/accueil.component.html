@@ -1,0 +1,36 @@
+<body>
+   <br><br><br><br><br>
+
+<div *ngIf="userDetails" class="cadre">
+<h1> Welcome {{userDetails.fullName.split(' ')[0]}}</h1>
+
+<table  class="table-fill">
+    <thead>
+        <tr>
+            <th colspan="2" class="text-center">liste des module de gestion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><a href="#" routerLink="/product" class="btn2"> Gestion des produits</a></tr>
+        <tr> <a href="#" routerLink="/commande" class="btn2"> Gestion  des commandes</a></tr>
+        <tr><a href="#" routerLink="/demande" class="btn2"> Gestion des Demandes</a></tr>
+        <tr><a href="#" routerLink="/pbcarte" class="btn2"> Gestion des evenements</a></tr>
+        <tr><a href="#" routerLink="/chat" class="btn2"> Commnication Instantanée</a></tr>
+           
+      
+        
+        <!-- <tr>
+            <td>Email</td>
+            <td>{{userDetails.email}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center">
+               
+            </td>
+        </tr> -->
+    </tbody>
+  </table>
+  <div class="position">
+    <input type="button" (click)="onLogout()" value="Logout" /></div>
+</div>
+</body>

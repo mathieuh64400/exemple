@@ -1,0 +1,33 @@
+
+   
+  <app-navbar></app-navbar>  
+   
+  <div class="box">
+      <div class="cadre"> Notifications </div>
+       <label for="name">Recherche par Nom</label>
+      <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par Sujet du message "
+          [(ngModel)]='searchTermtype'><div>
+             <button type="button" class="btn btn-dark" style="margin-top: 2%;margin-bottom:2%"><a href="#" routerLink="/createdemande">creer un message</a></button>    
+      <ul class="list-group" *ngFor="let note of messages |messagesbyname : searchTermtype  ;">
+         
+          <li class="list-group-item active"> <hr>
+              <div class="titre"> Author:{{note.pseudo}}
+              </div> 
+              <div class="trait">........</div>
+              <div class="titre">  <span>  Notification portant sur: <br>{{note.Nom}}</span>
+              </div>
+              <div class="description"> {{note.description}}</div>
+              <div class="trait">........</div>
+              <div class="info"> {{note.type | uppercase}} / {{note.date| date:'longDate'}}</div>
+              <!-- <div class="boolean"  *ngIf="(note.nature)!=true;else elseBlock">
+                  <span>traitement:</span> NON URGENT </div>
+              <ng-template #elseBlock>
+                  <div class="boolean "><span>Etat:</span> URGENT </div>
+              </ng-template> -->
+              <hr>
+          </li>
+  
+      </ul>
+  </div>
+  <button type="button" class="btn btn-dark" style="margin-top: 2%;margin-bottom: 10%;"><a href="#" routerLink="/accueil">accueil</a></button> 
+  <app-footer></app-footer>

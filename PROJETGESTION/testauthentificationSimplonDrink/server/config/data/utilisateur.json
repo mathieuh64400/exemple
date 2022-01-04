@@ -1,0 +1,11 @@
+[
+    {
+        "nom":"Doe",
+        "prenom":"joe",
+        "pseudo":"keff",
+        "preference":"chocolat,thénoir",
+        "promotion":"20021-2022/CDA",
+        "email":"jdoe@neuf.fr",
+        "lieu":"Pau"
+    }
+]

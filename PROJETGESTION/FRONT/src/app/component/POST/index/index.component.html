@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<h2> Nos Evenements</h2>
+<button type="button" class="btn btn-dark" style="margin-top: 2%; margin-left: 50%;"><a href="#"
+        routerLink="/accueil">accueil</a></button>
+<div class="bigcadre">
+    <div class="search">
+        <label for="name">Recherche par Nom</label>
+        <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par nom de l'evenement"
+            [(ngModel)]='searchTermevent'>
+    </div>
+    <div class="cadre">
+        <div *ngFor="let event of events | eventbyname:searchTermevent" > 
+            <div class="repartition">
+           
+                <img width="25%;" height="25%;"
+                src='./assets/img/{{event.imgUrl}}'>
+           
+            <div class="doc">
+                <!-- <div style="text-align: left; margin-top:5%; font-size: 0.75em;"><span>id:{{event.id}}</span></div> -->
+                <div class="text" ><span>Nom:{{event.titre|uppercase}}</span></div>
+                <div class="text" ><span>autheur: {{event.author|uppercase}}</span></div>
+                <div class="text" > <span> detail: <br>{{event.contenu}}</span></div>
+                <div class="text" > <span> date de Modification:{{event.date|date:'shortDate'|lowercase}}</span></div>
+            </div>
+           </div>
+         
+           <div></div>
+        </div>
+      
+    </div>
+<app-footer></app-footer>

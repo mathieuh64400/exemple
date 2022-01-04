@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<div class="container">
+   
+  
+    <a href="#" routerLink="/pbcarte" class="btn3">Accueil</a>
+        
+     <h1>Creer un nouvel évenement</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="titre">titre:</label>
+            <input 
+                formControlName="titre"
+                id="titre" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.titre.touched && f.titre.invalid" class="alert alert-danger">
+                <div *ngIf="f.titre.errors?.required">titre is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="body">contenu</label>
+            <textarea 
+                formControlName="contenu"
+                id="body" 
+                type="text" 
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.contenu.touched && f.contenu.invalid" class="alert alert-danger">
+                <div *ngIf="f.contenu.errors?.required">contenu is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">author:</label>
+            <input 
+                formControlName="author"
+                id="author" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.author.touched && f.author.invalid" class="alert alert-danger">
+                <div *ngIf="f.author.errors?.required">author is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">date:</label>
+            <input 
+                formControlName="date"
+                id="date" 
+                type="date" 
+                class="form-control">
+            <div *ngIf="f.date.touched && f.date.invalid" class="alert alert-danger">
+                <div *ngIf="f.date.errors?.required">date is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">imageURl:</label>
+            <input 
+                formControlName="imgUrl"
+                id="imgUrl" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.imgUrl.touched && f.imgURl.invalid" class="alert alert-danger">
+                <div *ngIf="f.imgURl.errors?.required">imageURl is required.</div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
+<app-footer></app-footer>

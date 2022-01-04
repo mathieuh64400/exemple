@@ -1,0 +1,25 @@
+.cadre{
+    background-color:transparent;
+    color:black;
+    padding-top: 5%;
+    margin-left:25%;
+    /* margin-top:10%; */
+    height: 30em;
+    width:50em;
+    border: solid 10px black;
+}
+h1{ text-align: center;}
+.btn2 {
+    background-color: rgb(251, 173, 37);
+    /* Green */
+    border: none;
+    color: white;
+    padding: 2px 20px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 0%;
+    margin-left: 47%;
+  }

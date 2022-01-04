@@ -1,0 +1,28 @@
+  <body style="background-image:url('./assets/img/image.jpg') ;">
+    
+ <h1> Administrer votre application:</h1>
+  <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+     
+    <label class="message"> votre email</label>
+    <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="" [pattern]="emailRegex" required
+      [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
+    <div *ngIf="signInForm.submitted && email.errors?.pattern">
+      <label class="validation-message"> email invalide.</label>
+    </div>
+    <label class="message">Mot de passe.</label>
+    <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="" required minlength="8"
+      [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
+    <div *ngIf="signInForm.submitted && password.errors?.minlength">
+      <label class="validation-message">Minimum 8 characters.</label>
+    </div>
+    <input type="submit" value="Sign In">
+     <div style="color:white">
+        Si vous n'avez pas de compte:
+      <a routerLink="/signup"> Signup</a>
+    </div>
+  </form>
+  <!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+</body>  

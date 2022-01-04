@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+
+<article>
+    <h1>List des Produits</h1>
+        <div class="rep">
+            <div><a href="#" routerLink="/productcreate" class="btn2">Creer un nouveau produit: </a></div>
+            <div>  <a href="#" routerLink="/accueil" class="btn2">Accueil: </a></div>
+        </div>
+        
+      
+    <br> <br> <br>
+    <table class="table">
+        <tr class='cadretitre'>
+            <th>ID</th>
+            <th>titre event</th>
+            <th>Nom produit</th>
+            <th>description</th>
+            <!-- <th>contenu</th> -->
+            <th>quantité</th>
+            <th>date</th>
+            <th>category</th>
+            <th>Nom de l'acheteur</th>
+            <th>etat</th>
+            <th>imageUrl:</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let post of cartes">
+            <td>{{ post._id }}</td>
+            <td>{{ post.titre }}</td>
+            <td>{{ post.name }}</td>
+            <!-- <td>{{ post.contenu}}</td> -->
+            <td>{{ post.description}}</td>
+            <td>{{ post.quantity}}</td>
+            <td>{{ post.date| date:'mediumDate' }}</td>
+            <td>{{ post.category}}</td>
+            <td>{{ post.NomConsommateur}}</td>
+            <td>{{ post.etat}}</td>
+            <td>{{post.imageUrl}}</td>
+            <td>
+                <!-- <a href="#" [routerLink]="['/post/', post._id, 'view']" class="btn btn-info">View</a>-->
+                <a href="#" [routerLink]="['/product/', post._id, 'edit', {postId: post._id}]" class="btn3">EDIT</a>
+
+                <a href="" (click)="deletePost(post._id)" class="btn2">
+                    DELETE
+                </a>
+            </td>
+        </tr>
+    </table>
+</article>
+<app-footer></app-footer>

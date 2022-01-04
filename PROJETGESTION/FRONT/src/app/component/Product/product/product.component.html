@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<h2> Nos Produits</h2>
+<!-- <div style="font-weight: bold; margin-left: 20%;margin-top: 2%;" routerLink="/commande"> retour a la liste de produit</div> -->
+<div class="bigcadre">
+    <div class="search">
+        <label for="name">Recherche par Nom</label>
+        <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par nom"
+            [(ngModel)]=' searchTermproduct '>
+    </div>
+
+ <div class="retour " routerLink="/accueil"> retour a l'accueil</div>
+    <button type="button" class="btn btn-secondary btn-lg btn-block"> <a href="" routerLink="/commande">Commander</a>
+    </button>
+    <div  >
+        <div *ngFor="let produit of product 
+    | productbyname : searchTermproduct ">
+
+            <div class="card" class="encadre">
+               
+                <img  
+                src='./assets/img/produit/{{produit.imageUrl}}'>
+           
+                <div class="card-body">
+                    <h5 class="card-title">{{produit.name}}</h5>
+                    <div class="souscadre">
+                        <p class="card-text">Quantité:{{produit.quantity}} </p>
+                        <p class="card-text">Marque/type:{{produit.category}}</p>
+
+                        <p class="card-text"> Informations:
+                            {{produit.description}} </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+   
+    <app-footer></app-footer>

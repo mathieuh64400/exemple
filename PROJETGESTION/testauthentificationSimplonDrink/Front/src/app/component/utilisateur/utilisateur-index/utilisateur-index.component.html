@@ -1,0 +1,73 @@
+<!-- <app-menu></app-menu> -->
+<h2> Nos Membres:</h2>
+<div style="text-align: center;" class="form-field">
+    <div>
+        <label for="name">Recherche par Nom</label>
+        <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par nom"
+            [(ngModel)]=' searchTerm '>
+    </div>
+    <div> <a routerLink='/adduser'> ajouter un element</a></div>
+</div>
+<div class="cadre" style="margin-left:15%;display:flex; flex-direction:row;"
+    *ngFor="let user of utilisateurs | utilisateurbyname : searchTerm">
+
+    <!-- <img [src]="user.img" alt="logo personne" width="33%;" height="66%;"> -->
+    <div>
+        <table class="table">
+
+            <tbody>
+                <tr>
+                    <td class="td">Nom</td>
+                    <td *ngIf="(user.nom && user.prenom)!=''; else elseBlock">{{user.nom}} / {{user. prenom}}</td>
+                    <ng-template #elseBlock>
+                        <td> elements manquants</td>
+                    </ng-template>
+                </tr>
+                <!-- <tr>
+                    <td class="td">Role</td>
+                    <td *ngIf="(user.role)!=false;  else orBlock"> USER</td>
+                    <ng-template #orBlock>
+                        <td> Admin </td>
+                    </ng-template>
+                </tr> -->
+                <tr>
+                    <td class="td">Preference:</td>
+                    <td *ngIf="(user.preference)!=''; else elseBlock">{{user.preference}}</td>
+                    <ng-template #elseBlock>
+                        <td> elements manquants</td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="td">contact:</td>
+                    <td *ngIf="(user.email)!=''; else elseBlock">{{user.email}}</td>
+                    <ng-template #elseBlock>
+                        <td> elements manquants</td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="td"> Promotion</td>
+                    <td *ngIf="(user.promotion)!=null; else elseBlock">{{user.promotion|uppercase}}</td>
+                    <ng-template #elseBlock>
+                        <td> elements manquants</td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="td">lieu d'etude</td>
+                    <td *ngIf="(user.lieu)!=''; else elseBlock">{{user.lieu |uppercase}}</td>
+                    <ng-template #elseBlock>
+                        <td> elements manquants</td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td> <a class="btn rounded-1 black press" [routerLink]="['/utilisateur/', user._id, 'edit', {postId: user._id}]">modifier</a></td>
+                   <td class="btn rounded-1 black press" (click)="delete(user._id)"> supprimer </td>  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<a href routerLink="/accueil" style="margin-left: 25%;">
+    <button type="submit" class="btn large shadow-1 black dark-2 press" style="margin-top: 1%;">
+        Accueil</button></a>
+<!-- <app-footer></app-footer> -->

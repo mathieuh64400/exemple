@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<div class="card text-center"  class="box">
+    <div class="card-body">
+        <h5 class="card-title" class="titrepart">Create Message </h5>
+                <div class="cadre" style="overflow-y: scroll;">
+                    <form [formGroup]="forms" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="nom">Nom </label>
+            <input 
+                formControlName="Nom"
+                id="Nom" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.Nom.touched && f.Nom.invalid" class="alert alert-danger">
+                <div *ngIf="f.Nom.errors?.required">Nom is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Description</label>
+            <input 
+                formControlName="description"
+                id="Description" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+                <div *ngIf="f.description.errors?.required">description is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="pseudo">pseudo</label>
+            <input
+                formControlName="pseudo"
+                id="pseudo" 
+                type="text" 
+                class="form-control">
+            
+            <div *ngIf="f.pseudo.touched && f.pseudo.invalid" class="alert alert-danger">
+                <div *ngIf="f.pseudo.errors?.required">pseudo is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pseudo">Date</label>
+            <input 
+                formControlName="date"
+                id="Date" 
+                type="date" 
+                class="form-control">
+            
+            <div *ngIf="f.date.touched && f.date.invalid" class="alert alert-danger">
+                <div *ngIf="f.date.errors?.required">date is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="type">type</label>
+            <input 
+                formControlName="type"
+                id="type" 
+                type="text" 
+                class="form-control">
+            
+            <div *ngIf="f.type.touched && f.type.invalid" class="alert alert-danger">
+                <div *ngIf="f.type.errors?.required">type is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="type">nature</label>
+            <input 
+                formControlName="nature"
+                id="nature" 
+                type="boolean" 
+                class="form-control">
+            
+            <div *ngIf="f.nature.touched && f.nature.invalid" class="alert alert-danger">
+                <div *ngIf="f.nature.errors?.required">nature is required.</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-dark" type="submit" [disabled]="!forms.valid">Submit</button>
+    </form>
+        
+
+                </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

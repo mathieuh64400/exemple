@@ -1,0 +1,28 @@
+
+h2 {
+    margin-left: 37%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: gold;
+    text-decoration: underline gold;
+  }
+  .cadre {
+    font-weight: bold;
+    font-size: x-large;
+    color: black;
+    border: black solid 0.25em;
+    background-color: ivory;
+    width: 66%;
+    height: 63%;
+   
+    padding:5%;
+    margin-bottom: 33%;
+  
+  }
+  td{font-weight: normal; font-size: small;}
+  .td{
+      text-decoration: underline;
+  }
+  table{
+      border: solid 1px black;
+  }

@@ -1,0 +1,101 @@
+h2,
+p {
+  text-align: center;
+  font-weight: bold;
+
+}
+ul{
+  background-color: blanchedalmond;
+  margin-bottom: 2%;
+}
+
+.trait {
+  text-align: center;
+  color: black;
+}
+
+.info {
+  color: black;
+  text-align: center;
+}
+
+.titre {
+  text-align: center;
+  font-weight: thin;
+  color: black;
+}
+.titre>span{
+  text-decoration: underline;
+}
+.boolean {
+  margin-bottom: 5%;
+  margin-top: 10%;
+}
+
+.box {
+  background-color: gold;
+  text-align: center;
+  width: 66%;
+  margin-left: 10%;
+  margin-top: 1%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin-bottom: 5%;
+}
+
+.cadre {
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  border: black solid 0.25em;
+  background-color: ivory;
+  width: 95%;
+  text-align: center;
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+
+}
+
+.encadre {
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  border: black solid 0.25em;
+  /* background-color: white; */
+  width: 95%;
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
+
+
+.rep {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  text-align: center;
+}
+
+.rep div p {
+  font-size: 0.9em;
+  margin-left: 5%;
+  margin-bottom: 0%;
+}
+.list-group-item {
+  background-color: blanchedalmond;
+}
+.active{
+  background-color: blanchedalmond;
+  
+}
+.description{
+  color: black;
+  width: 90%;
+  font-size: 0.75em;
+  word-wrap: break-word;
+ 
+}

@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body>
+    
+
+<app-navbar></app-navbar>
+<h2 style="color:black"> {{message.titre}}</h2>
+<h3 class="soustitre">{{message.soustitre}}</h3>
+
+
+<div class="rep">
+    <div class="card text-center" class="box">
+        <div class="card-body">
+            <h5 class="card-title">Gerer vos envies et l'equipe :<br> Boisson / Membre</h5>
+            <div class="rep">
+
+                <div class="card" class="cadre">
+                    <div class="card-body">
+                        <h5 class="card-title">Membre</h5>
+                        <p class="card-text">Qui sont vos coequipiers?</p>
+                        <button type="button" class="btn btn-dark"><a href="#"routerLink='/listutilisateur' >Decouvrir</a></button>
+                        
+                    </div>
+                </div>
+                <div class="card"  class="cadre">
+                    <div class="card-body">
+                        <h5 class="card-title">Commande</h5>
+                        <p class="card-text"> vos boissons preferées!</p>
+                        <button type="button" class="btn btn-dark"><a href="#"routerLink='/productlist'>Commander</a>
+                        </button>
+                       
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="rep">
+
+                <div class="card" class="cadre">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion des stocks</h5>
+                        <p class="card-text">stock de vos boissons</p>
+                        <button type="button" class="btn btn-dark"><a href="#"routerLink='/productlist'>voir</a></button>
+                       
+                    </div>
+                </div>
+                <div class="card" class="cadre">
+                    <div class="card-body">
+                        <h5 class="card-title">Evenements:</h5>
+                        <p class="card-text"> evenement particulier</p>
+                        <button type="button" class="btn btn-dark"><a href="#"routerLink="/event">voir</a></button>
+                        <!-- <button (click)="openModal()">
+                            Open Modal
+                          </button> -->
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="card text-center"  class="box">
+        <div class="card-body">
+            <h5 class="card-title" class="titrepart">Notification <i class="fas fa-search" id="symbol"
+                    routerLink="/demande"></i></h5>
+                    <div class="cadrespec" style="overflow-y: scroll;">
+                        <div *ngFor="let data of dataserv.donnee | slice:1:5">
+                            <div class="rep">
+            
+                                <div class="rep">
+                                    <p id="category">{{data.Category}}:</p>
+                                    <p id="Description">{{data.Description}}</p>
+                                </div>
+                                 <div class="rep">
+                                 <p style="margin-right: 2%;" id="nom">{{data.Nom | uppercase}}</p>
+                                    
+                                </div> 
+                              
+            
+                            </div>
+                            <div id="trait">-----------------------------------------------</div>
+                        </div> 
+            
+
+                    </div>
+
+        </div>
+    </div>
+
+
+</div>
+<app-footer></app-footer></body>

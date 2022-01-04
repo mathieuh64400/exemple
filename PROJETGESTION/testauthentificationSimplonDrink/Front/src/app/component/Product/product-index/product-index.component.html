@@ -1,0 +1,40 @@
+
+<article class="container">
+    <h1>List des Produits</h1>
+
+    <a href="#" routerLink="/produitcreate" class="btn2">Creer un nouveau produit: </a>
+    <br> <br> <br>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Nom produit</th>
+        <th>description</th>
+        <th>quantité</th>
+        <th>date</th>
+        <th>category</th>
+        <th>Nom de l'acheteur</th>
+        <th>etat</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let post of cartes">
+        <td>{{ post._id }}</td>
+        <td>{{ post.name }}</td>
+        <td>{{ post.description}}</td>
+        <td>{{ post.quantity}}</td>
+        <td>{{ post.date }}</td>
+        <td>{{ post.category}}</td>
+        <td>{{ post.NomConsommateur}}</td>
+         <td>{{post.imageUrl}}</td>
+        <td>{{ post.etat}}</td>
+       
+        <td>
+          <!-- <a href="#" [routerLink]="['/post/', post._id, 'view']" class="btn btn-info">View</a>-->
+          <a href="#" [routerLink]="['/produit/', post._id, 'edit', {postId: post._id}]" class="btn">EDIT</a>
+
+          <a class="action-btn" (click)="deletePost(post._id)" class="btn2">
+            DELETE
+          </a>
+        </td>
+      </tr>
+    </table>
+  </article>
